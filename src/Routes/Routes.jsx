@@ -5,6 +5,9 @@ import {
 import Root from '../Components/Root/Root';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import Home from '../Components/Home/Home';
+import JobDetails from '../Components/JobDetails/JobDetails';
+import AppliedJobs from '../Components/AppliedJobs/AppliedJobs';
+import Blog from '../Components/Blog/Blog';
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +17,22 @@ export const router = createBrowserRouter([
     children:[
       {
         index: true,
+        path: '/',
         Component: Home,
-        loader: ()=> fetch('categories.json')
+        loader: ()=> fetch('../categories.json')
+      },
+      {
+        path: '/jobs/:jobId',
+        loader: ()=> fetch('../jobs.json'),
+        Component: JobDetails
+      },
+      {
+        path: '/appliedJobs',
+        Component: AppliedJobs
+      },
+      {
+        path: '/blog',
+        Component: Blog
       }
     ]
   },

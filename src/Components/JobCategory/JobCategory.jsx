@@ -4,7 +4,7 @@ import CategoryCard from '../CategoryCard/CategoryCard';
 
 const JobCategory = () => {
     const cateogories = useLoaderData();
-    console.log(cateogories)
+    // console.log(cateogories)
     return (
         <div className='text-center my-20 space-y-3'>
             <h2 className='text-3xl font-semibold'>Job Category List</h2>

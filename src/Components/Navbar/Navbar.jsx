@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-                   <li><a>Statistics</a></li>
+                   <li><NavLink to='/'>Statistics</NavLink></li>
                     <li>
-                    <a>Applied Jobs</a>
+                    <NavLink to='/appliedJobs'>Applied Jobs</NavLink>
                     </li>
-                    <li><a>Blog</a></li>
+                    <li><NavLink to='/blog'>Blog</NavLink></li>
                   </>
     return (
         <div className="navbar bg-base-100">
