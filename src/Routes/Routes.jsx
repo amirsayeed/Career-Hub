@@ -19,7 +19,8 @@ export const router = createBrowserRouter([
         index: true,
         path: '/',
         Component: Home,
-        loader: ()=> fetch('../categories.json')
+        hydrateFallbackElement: <p>Loading, Please wait...</p>,
+        loader: ()=> fetch('categories.json')
       },
       {
         path: '/jobs/:jobId',
@@ -28,7 +29,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/appliedJobs',
-        Component: AppliedJobs
+        Component: AppliedJobs,
+        loader: ()=>fetch('../jobs.json')
       },
       {
         path: '/blog',

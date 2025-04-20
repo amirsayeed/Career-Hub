@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { ImCoinDollar } from "react-icons/im";
 import './JobDetails.css'
-
+import { addToStore } from '../../utility/addToStoreDb';
 
 const JobDetails = () => {
     const allJobs = useLoaderData()
@@ -10,7 +10,12 @@ const JobDetails = () => {
     // console.log(jobId,allJobs);
     const id = parseInt(jobId)
     const jobData = allJobs.find(job=> job.id === id);
-    const {job_title,contact_information,salary,job_description,job_responsibility,educational_requirements,experiences} = jobData || {}
+    const {id:currentId,job_title,contact_information,salary,job_description,job_responsibility,educational_requirements,experiences} = jobData || {}
+
+    const handleApply = (id) =>{
+        addToStore(id)
+    }
+
     return (
         <div>
             <div className='p-10 bg-gray-300' >
@@ -20,7 +25,7 @@ const JobDetails = () => {
                     <div className="hero">
                         <div className="hero-content flex-col lg:flex-row items-start justify-center">
                             <div className="text-justify lg:text-left max-w-3xl space-y-5">
-                            <p className="text-lg"><span className='font-medium'>Job Description:</span>{job_description}</p>
+                            <p className="text-lg"><span className='font-medium'>Job Description:</span> {job_description}</p>
                             <p className="text-lg">
                                 <span className='font-medium'>Job Responsibility:</span> {job_responsibility}
                             </p>
@@ -31,7 +36,7 @@ const JobDetails = () => {
                             </p>
                             </div>
                             <div>
-                                <div className="card bg-base-200 shadow-md rounded-2xl p-4">
+                                <div className="card bg-[linear-gradient(90deg,rgba(126,144,254,0.1),rgba(152,115,255,0.1))] shadow-md rounded-2xl p-4">
                                 <div className="card-body">
                                     <span className="text-xl font-medium">Job Details</span>
                                     <div className='border-t border-dashed my-3'></div>
@@ -63,7 +68,7 @@ const JobDetails = () => {
                                 </div>
                                 </div>
                                 <div className="pt-6">
-                                    <button className="btn btn-primary btn-block rounded-xl">Apply Now</button>
+                                    <button onClick={()=>handleApply(currentId)} className="btn btn-primary btn-block rounded-xl">Apply Now</button>
                                 </div>
                             </div>
                         </div>
