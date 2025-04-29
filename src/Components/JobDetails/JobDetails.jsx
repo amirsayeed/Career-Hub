@@ -1,10 +1,12 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
 import { ImCoinDollar } from "react-icons/im";
 import './JobDetails.css'
 import { addToStore } from '../../utility/addToStoreDb';
 
+
 const JobDetails = () => {
+    const navigate = useNavigate();
     const allJobs = useLoaderData()
     const {jobId} = useParams()
     // console.log(jobId,allJobs);
@@ -13,7 +15,8 @@ const JobDetails = () => {
     const {id:currentId,job_title,contact_information,salary,job_description,job_responsibility,educational_requirements,experiences} = jobData || {}
 
     const handleApply = (id) =>{
-        addToStore(id)
+       const isApplied = addToStore(id);
+       {isApplied && navigate('/appliedJobs')};
     }
 
     return (

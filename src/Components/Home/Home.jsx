@@ -2,14 +2,15 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import JobCategory from '../JobCategory/JobCategory';
 import Jobs from '../Jobs/Jobs';
+import { useLoaderData } from 'react-router';
 
 const Home = () => {
-    const jobsPromise = fetch('jobs.json').then(res=>res.json())
+    const jobsData = useLoaderData();
     return (
         <div>
           <Banner/> 
           <JobCategory/>
-          <Jobs jobsPromise={jobsPromise}/>
+          <Jobs jobsData={jobsData}/>
         </div>
     );
 };

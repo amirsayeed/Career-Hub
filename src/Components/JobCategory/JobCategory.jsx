@@ -1,10 +1,15 @@
-import React from 'react';
-import { useLoaderData } from 'react-router';
+import React, { useEffect, useState } from 'react';
 import CategoryCard from '../CategoryCard/CategoryCard';
 
 const JobCategory = () => {
-    const cateogories = useLoaderData();
-    // console.log(cateogories)
+    const [cateogories,setCategories] = useState([]);
+    
+    useEffect(()=>{
+        fetch('categories.json')
+        .then(res => res.json())
+        .then(data =>setCategories(data))
+    },[])
+
     return (
         <div className='text-center my-20 space-y-3'>
             <h2 className='text-3xl font-semibold'>Job Category List</h2>

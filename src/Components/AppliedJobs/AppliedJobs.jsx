@@ -7,6 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const AppliedJobs = () => {
     const [applied,setApplied] = useState([]);
+    // const [sort, setSort] = useState([]);
     const allJobs = useLoaderData()
 
     useEffect(()=>{
@@ -15,6 +16,7 @@ const AppliedJobs = () => {
         const selectedJob = allJobs.filter(item=> jobsInt.includes(item.id));
         setApplied(selectedJob);
     },[])
+
 
     return (
         <div>
@@ -25,7 +27,8 @@ const AppliedJobs = () => {
                 <details className="dropdown">
                     <summary className="btn m-1">Filter By<span><IoIosArrowDown size={15}/></span></summary>
                     <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                        <li><a>Salary</a></li>
+                        <li><button>Newest</button></li>
+                        <li><button>Oldest</button></li>
                     </ul>
                 </details>
             </div>

@@ -12,15 +12,17 @@ import Blog from '../Components/Blog/Blog';
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    Component: Root,
     errorElement:<ErrorPage/>,
     children:[
       {
         index: true,
-        path: '/',
+        loader: ()=> fetch('../jobs.json'),
         Component: Home,
-        hydrateFallbackElement: <p>Loading, Please wait...</p>,
-        loader: ()=> fetch('categories.json')
+        hydrateFallbackElement: <span className='flex items-center justify-center'>
+                                    <span className="loading loading-bars loading-lg"></span>
+                                    <span className="loading loading-bars loading-xl"></span>
+                                </span>
       },
       {
         path: '/jobs/:jobId',
@@ -29,8 +31,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/appliedJobs',
-        Component: AppliedJobs,
-        loader: ()=>fetch('../jobs.json')
+        loader: ()=>fetch('../jobs.json'),
+        Component: AppliedJobs
       },
       {
         path: '/blog',
