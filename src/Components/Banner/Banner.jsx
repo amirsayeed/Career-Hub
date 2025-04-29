@@ -14,7 +14,7 @@ const Banner = () => {
             <p className="text-xl">
                 Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn allBtn text-white">Get Started</button>
             </div>
         </div>
         </div>

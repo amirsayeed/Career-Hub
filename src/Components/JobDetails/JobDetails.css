@@ -1,0 +1,6 @@
+#job_details {
+    background: linear-gradient(90.00deg, rgba(126, 144, 254, 0.05),rgba(152, 115, 255, 0.05) 100%);
+    background-image: url(../../assets/images/bg1.png),url(../../assets/images/bg2.png);
+    background-position: bottom left, top right;
+    background-repeat: no-repeat;
+}

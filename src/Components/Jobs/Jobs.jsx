@@ -17,13 +17,13 @@ const Jobs = ({jobsData}) => {
         <div className='my-20 text-center space-y-3'>
             <h2 className='text-3xl font-semibold'>Featured Jobs</h2>
             <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
-            <div className='mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center'>
+            <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-center'>
                 {
                    showJobs.map(job=><Job key={job.id} job={job}/>) 
                 }
             </div>
             <div className='text-center mt-8'>
-            <button onClick={()=>setShowAll(prev=>!prev)} className='btn'>{showAll ? 'Show Less' : 'Show All Jobs'}</button>
+            <button onClick={()=>setShowAll(prev=>!prev)} className='btn allBtn text-white'>{showAll ? 'Show Less' : 'Show All Jobs'}</button>
             </div>
         </div>
     );

@@ -21,7 +21,7 @@ const JobDetails = () => {
 
     return (
         <div>
-            <div className='p-10 bg-gray-300' >
+            <div className='p-20' id='job_details'>
                 <h2 className="text-2xl font-semibold text-center">Job Details</h2>
             </div>
             <div className='my-20'>
@@ -71,7 +71,7 @@ const JobDetails = () => {
                                 </div>
                                 </div>
                                 <div className="pt-6">
-                                    <button onClick={()=>handleApply(currentId)} className="btn btn-primary btn-block rounded-xl">Apply Now</button>
+                                    <button onClick={()=>handleApply(currentId)} className="btn allBtn btn-block text-white rounded-xl">Apply Now</button>
                                 </div>
                             </div>
                         </div>

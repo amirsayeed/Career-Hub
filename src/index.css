@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.allBtn {
+    background: linear-gradient(90.00deg, rgb(126, 144, 254),rgb(152, 115, 255) 100%);
+}
+
+#ctg-bg{
+    background: linear-gradient(90.00deg, rgba(126, 144, 254, 0.05),rgba(152, 115, 255, 0.05) 100%);
+}

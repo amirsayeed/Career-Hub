@@ -3,7 +3,7 @@ import React from 'react';
 const CategoryCard = ({category}) => {
     const {logo,category_name,availability} = category;
     return (
-        <div className="card bg-base-100 shadow-md p-4">
+        <div id='ctg-bg' className="card shadow-md p-4 hover:scale-110">
             <figure>
                 <img
                 src={logo}

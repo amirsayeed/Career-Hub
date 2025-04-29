@@ -6,7 +6,7 @@ const Job = ({job}) => {
     
     const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary} = job;
     return (
-        <div className="card bg-base-100 w-96 h-96 items-start justify-center shadow-lg px-6 py-8 gap-2">
+        <div className="card bg-base-100 w-96 h-96 items-start justify-center shadow-lg px-6 py-8 gap-2 hover:scale-105 hover:bg-yellow-300">
             <figure>
                  <img
                 src={logo}
@@ -26,7 +26,7 @@ const Job = ({job}) => {
             <div className="card-actions">
                  
             <Link to={`/jobs/${id}`}>
-                <button className="btn btn-primary">View Details</button>
+                <button className="btn allBtn text-white">View Details</button>
             </Link> 
             
             </div>
